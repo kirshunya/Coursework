@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AudioPlayer</class>
+ <widget class="QMainWindow" name="AudioPlayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AudioPlayer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"> QWidget {
+  background-color: #393939;
+   color: #FFFFFF;
+   font-family: 'Helvetica Neue';
+  }
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="nameLabel">
+      <property name="font">
+       <font>
+        <family>Helvetica Neue</family>
+        <pointsize>25</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Welcome to the AudioPlayer🌿🍃</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="styleSheet">
+       <string notr="true">QListWidget {
+   background-color: #00D0;
+   border: 1px solid #999999;
+}
+QListWidget::item {
+   padding: 10px;
+}
+QListWidget::item:selected {
+   background-color: #b4b4b4;
+}
+</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="timeLabel1">
+        <property name="text">
+         <string>00:00</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="durationSlider">
+        <property name="styleSheet">
+         <string notr="true">QSlider::groove:horizontal
+{
+	height:5px;
+    width:650px;
+background:gray;
+border-radius:2px;
+}
+
+QSlider::handle:horizontal
+{
+background:rgb(192, 192, 192);
+width:11px;
+height:20px;
+margin:-5px -5px;
+border-radius:2px;
+}</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timeLabel2">
+        <property name="text">
+         <string>00:00</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="prevButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="playButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="nextButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="openButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+color: #000000; /* Черный текст */
+font-family: 'Helvetica', 'Arial', sans-serif; /* Семейство шрифтов */
+ font-size: 15px; /* Размер шрифта */
+ font-weight: bold; /* Жирный шрифт */
+ text-transform: uppercase; /* Заглавные буквы */
+ letter-spacing: 2px; /* Расстояние между буквами */
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+          </property>
+          <property name="text">
+           <string>Open</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+color: #000000; /* Черный текст */
+font-family: 'Helvetica', 'Arial', sans-serif; /* Семейство шрифтов */
+ font-size: 15px; /* Размер шрифта */
+ font-weight: bold; /* Жирный шрифт */
+ text-transform: uppercase; /* Заглавные буквы */
+ letter-spacing: 2px; /* Расстояние между буквами */
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+          </property>
+          <property name="text">
+           <string>Clear Playlist</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="playBackLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>PlayBackMode:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Volume</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="muteButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+ background-color: #D3D3D3;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+ }
+ QPushButton:pressed {
+ background-color: #191919;
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="volumeSlider">
+        <property name="styleSheet">
+         <string notr="true">QSlider::groove:horizontal
+{
+	height:5px;
+    width:140px;
+background:gray;
+border-radius:2px;
+}
+
+QSlider::handle:horizontal
+{
+background:rgb(192, 192, 192);
+width:10px;
+height:20px;
+margin:-5px -5px;
+border-radius:2px;
+}</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1005</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionFullScreen_Mode"/>
+    <addaction name="actionNormalScreen"/>
+   </widget>
+   <widget class="QMenu" name="menuBackground">
+    <property name="title">
+     <string>Background</string>
+    </property>
+    <addaction name="actionAdd_background"/>
+   </widget>
+   <widget class="QMenu" name="menuPlayBAckMode">
+    <property name="title">
+     <string>PlayBackMode</string>
+    </property>
+    <addaction name="actionLoop"/>
+    <addaction name="actionRandom"/>
+   </widget>
+   <addaction name="menuWindow"/>
+   <addaction name="menuBackground"/>
+   <addaction name="menuPlayBAckMode"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionFullScreen_Mode">
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+  </action>
+  <action name="actionNormalScreen">
+   <property name="text">
+    <string>Normal Screen</string>
+   </property>
+  </action>
+  <action name="actionAdd_background">
+   <property name="text">
+    <string>Add background</string>
+   </property>
+  </action>
+  <action name="actionLoop">
+   <property name="text">
+    <string>Loop</string>
+   </property>
+  </action>
+  <action name="actionRandom">
+   <property name="text">
+    <string>Random</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
