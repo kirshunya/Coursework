@@ -11,3 +11,5 @@
 3. Вы можете управлять воспроизведением, используя кнопки "Next", "Play/Pause" и "Previous". Но также, по вашему желанию можно очистить плейлист и добавить новые аудиофайлы.
 ## Записка 
 https://docs.google.com/document/d/1PX53exAKJJc44nOHxDMJ7cmFsTqPFL9Tn_pyXIHEmGc/edit
+### Схемы и гугл диск: 
+https://drive.google.com/drive/folders/1zDy8sYfPr6pZtRE3vttLV7cgCba5vxLw?hl=ru
